@@ -1,12 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CinemaHall from "../components/CinemaHall";
+import BookingForm from "../components/BookingForm";
+import { BookingService } from "../services/BookingService";
 
 function Booking() {
   const { id } = useParams();
   const [selectedSeats, setSelectedSeats] = useState([]);
+  const [bookedSeats, setBookedSeats] = useState([]);
 
-  const bookedSeats = []; // поки що порожній список
+  useEffect(() => {
+    const booked = BookingService.getBookedSeats(id);
+    setBookedSeats(booked);
+  }, [id]);
+
+  const handleBooking = (userData) => {
+    BookingService.saveBooking(id, selectedSeats, userData);
+    alert("Бронювання успішно збережено!");
+    setSelectedSeats([]);
+    setBookedSeats(BookingService.getBookedSeats(id));
+  };
 
   return (
     <div>
@@ -24,6 +37,8 @@ function Booking() {
         <strong>Обрані місця:</strong>{" "}
         {selectedSeats.length > 0 ? selectedSeats.join(", ") : "немає"}
       </div>
+
+      {selectedSeats.length > 0 && <BookingForm onSubmit={handleBooking} />}
     </div>
   );
 }
