@@ -1,0 +1,44 @@
+.cinema-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .screen {
+    background-color: #ccc;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  .seats {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+  }
+  
+  .seat {
+    background-color: #b0f0b0;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
+  }
+  
+  .seat:hover {
+    background-color: #a0e0a0;
+  }
+  
+  .seat.selected {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .seat.booked {
+    background-color: #ff4d4d;
+    color: white;
+    cursor: not-allowed;
+  }
+  
