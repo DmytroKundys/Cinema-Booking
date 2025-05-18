@@ -1,60 +1,102 @@
 .movie-card {
     width: 100%;
-    max-width: 280px;
-    padding: 16px;
+    max-width: 300px;
     border-radius: 12px;
     background-color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    font-family: 'Inter Tight', sans-serif;
+    overflow: hidden;
+    height: 620px; /* Фіксована висота картки */
   }
   
-  .movie-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  .poster-wrapper {
+    height: 400px;
+    overflow: hidden;
   }
   
   .movie-poster {
     width: 100%;
-    border-radius: 8px;
+    height: 100%;
     object-fit: cover;
-    aspect-ratio: 2 / 3;
+  }
+  
+  .content-wrapper {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px; /* решта картки — фіксована для однакового розміру */
   }
   
   .movie-title {
-    font-size: 20px;
-    margin: 0;
+    font-size: 18px;
+    margin: 0 0 4px 0;
     font-weight: 600;
     color: #222;
   }
   
   .movie-description {
-    font-size: 14px;
+    font-size: 13px;
     color: #444;
-    line-height: 1.4;
+    line-height: 1.3;
+    flex-grow: 1;
   }
   
-  .movie-genre,
-  .movie-time {
-    font-size: 13px;
-    color: #777;
+  .badge-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    width: fit-content;
+    height: 24px;
+  }
+  
+  .badge-genre {
+    background-color: #e0e0e0;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .badge-time {
+    background-color: rgba(255, 92, 28, 0.1);
+    color: #ff5c1c;
+    font-weight: 600;
+    gap: 4px;
+  }
+  
+  .badge-time::before {
+    content: "🕒";
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 4px;
   }
   
   .book-button {
-    margin-top: auto;
+    margin-top: 12px;
     padding: 10px 16px;
     text-align: center;
-    background-color: #007bff;
+    background-color: #ff5c1c;
     color: white;
     text-decoration: none;
+    border: none;
     border-radius: 8px;
     transition: background-color 0.2s ease;
     font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
   }
-  
   .book-button:hover {
-    background-color: #0056b3;
+    background-color: #e65100;
   }
   

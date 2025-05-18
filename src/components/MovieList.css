@@ -1,9 +1,14 @@
+body {
+    font-family: 'Inter Tight', sans-serif;
+  }
+  
+
 .movie-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
+    gap: 12px;
     padding: 32px;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     box-sizing: border-box;
   }

@@ -20,6 +20,8 @@ function CinemaHall({ selectedSeats, setSelectedSeats, bookedSeats }) {
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
         const seatId = `${row}-${col}`;
+        const label = `${row + 1}-${col + 1}`; // ← новий текст для кнопки
+
         let className = "seat";
 
         if (bookedSeats.includes(seatId)) {
@@ -29,13 +31,14 @@ function CinemaHall({ selectedSeats, setSelectedSeats, bookedSeats }) {
         }
 
         seats.push(
-          <div
+            <div
             key={seatId}
             className={className}
             onClick={() => handleSeatClick(seatId)}
           >
-            {seatId}
+            {label}
           </div>
+          
         );
       }
     }
