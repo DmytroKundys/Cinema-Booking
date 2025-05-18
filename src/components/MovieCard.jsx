@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./MovieCard.css";
 
 function MovieCard({ movie }) {
@@ -9,6 +10,10 @@ function MovieCard({ movie }) {
       <p className="movie-description">{movie.description}</p>
       <p className="movie-genre">{movie.genre}</p>
       <p className="movie-time">Сеанс: {movie.time}</p>
+
+      <Link to={`/booking/${movie.id}`} className="book-button">
+        Забронювати
+      </Link>
     </div>
   );
 }
