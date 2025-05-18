@@ -1,6 +1,6 @@
 .movie-card {
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
     border-radius: 12px;
     background-color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -9,7 +9,7 @@
     flex-direction: column;
     font-family: 'Inter Tight', sans-serif;
     overflow: hidden;
-    height: 620px; /* Фіксована висота картки */
+    height: 620px;
   }
   
   .poster-wrapper {
@@ -28,7 +28,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 200px; /* решта картки — фіксована для однакового розміру */
+    height: 200px;
   }
   
   .movie-title {
@@ -96,7 +96,41 @@
     font-size: 14px;
     cursor: pointer;
   }
+  
   .book-button:hover {
     background-color: #e65100;
+  }
+  
+  /* 📱 Мобільна адаптація */
+  @media (max-width: 480px) {
+    .movie-card {
+      height: auto;
+    }
+  
+    .poster-wrapper {
+      height: 320px;
+    }
+  
+    .content-wrapper {
+      height: auto;
+      padding: 12px;
+    }
+  
+    .movie-title {
+      font-size: 16px;
+    }
+  
+    .movie-description {
+      font-size: 12px;
+    }
+  
+    .badge {
+      font-size: 11px;
+    }
+  
+    .book-button {
+      font-size: 13px;
+      padding: 8px 12px;
+    }
   }
   
